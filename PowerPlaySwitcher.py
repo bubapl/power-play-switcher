@@ -197,8 +197,8 @@ gtkbuilderui_xml = '''
 
 import pygtk
 pygtk.require('2.0')
-import glib #qw{ TRUE FALSE }
-import gtk #'-init'
+import glib
+import gtk
 import os
 import re
 
