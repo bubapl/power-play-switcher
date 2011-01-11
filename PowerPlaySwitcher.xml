@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="power_play_switcher_window">
+    <signal name="destroy" handler="on_power_play_switcher_window_destroy"/>
+    <child>
+      <object class="GtkVBox" id="vbox_main">
+        <property name="visible">True</property>
+        <property name="spacing">6</property>
+        <child>
+          <object class="GtkAlignment" id="alignment_methods_title">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkLabel" id="label_methods_title">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Power Management Methods</property>
+                <property name="single_line_mode">True</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_method_dynpm">
+            <property name="visible">True</property>
+            <property name="left_padding">4</property>
+            <child>
+              <object class="GtkRadioButton" id="radiobutton_method_dynpm">
+                <property name="label" translatable="yes">Dynamic Power Management Method (dynpm)</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <signal name="toggled" handler="on_radiobutton_method_dynpm_toggled"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_method_profile">
+            <property name="visible">True</property>
+            <property name="left_padding">4</property>
+            <child>
+              <object class="GtkRadioButton" id="radiobutton_method_profile">
+                <property name="label" translatable="yes">Profile Method (profile)</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">radiobutton_method_dynpm</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_profile_auto">
+            <property name="visible">True</property>
+            <property name="left_padding">30</property>
+            <child>
+              <object class="GtkRadioButton" id="radiobutton_profile_auto">
+                <property name="label" translatable="yes">Auto (mid on dc, high on ac)</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <signal name="toggled" handler="on_radiobutton_profile_auto_toggled"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_profile_low">
+            <property name="visible">True</property>
+            <property name="left_padding">30</property>
+            <child>
+              <object class="GtkRadioButton" id="radiobutton_profile_low">
+                <property name="label" translatable="yes">Low</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">radiobutton_profile_auto</property>
+                <signal name="toggled" handler="on_radiobutton_profile_low_toggled"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_profile_mid">
+            <property name="visible">True</property>
+            <property name="left_padding">30</property>
+            <child>
+              <object class="GtkRadioButton" id="radiobutton_profile_mid">
+                <property name="label" translatable="yes">Mid</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">radiobutton_profile_auto</property>
+                <signal name="toggled" handler="on_radiobutton_profile_mid_toggled"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_profile_high">
+            <property name="visible">True</property>
+            <property name="left_padding">30</property>
+            <child>
+              <object class="GtkRadioButton" id="radiobutton_profile_high">
+                <property name="label" translatable="yes">High</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">radiobutton_profile_auto</property>
+                <signal name="toggled" handler="on_radiobutton_profile_high_toggled"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_profile_default">
+            <property name="visible">True</property>
+            <property name="left_padding">30</property>
+            <child>
+              <object class="GtkRadioButton" id="radiobutton_profile_default">
+                <property name="label" translatable="yes">Default (power management off)</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">radiobutton_profile_auto</property>
+                <signal name="toggled" handler="on_radiobutton_profile_default_toggled"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="alignment_button_apply">
+            <property name="visible">True</property>
+            <property name="bottom_padding">12</property>
+            <property name="left_padding">334</property>
+            <property name="right_padding">12</property>
+            <child>
+              <object class="GtkButton" id="button_apply">
+                <property name="label">gtk-apply</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_button_apply_clicked"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">8</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
