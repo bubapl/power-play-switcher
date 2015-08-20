@@ -1,0 +1,1 @@
+This is a gui for changing powerplay setting of the open source driver for ati radeon video cards. It's designed for kernel versions >= 2.6.35
